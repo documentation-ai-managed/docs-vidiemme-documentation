@@ -1,0 +1,118 @@
+---
+title: Frequently Asked Questions
+description: Common queries about Vidiemme's services, processes, and engagement.
+---
+
+## Overview
+
+Vidiemme delivers customized digital solutions including AI, conversational interfaces, web, and mobile apps. You encounter questions about timelines, technology choices, and ongoing support. This page addresses your most common concerns across collaboration, tech stack, and success metrics.
+
+<Columns cols={3}>
+  <Card title="Timelines & Costs" icon="clock" href="#collaboration">
+    Understand project phases and pricing models.
+  </Card>
+  <Card title="Tech Stack" icon="code" href="#technology">
+    Explore scalable technologies we use.
+  </Card>
+  <Card title="Success Stories" icon="star" href="#success">
+    Learn from client outcomes and support.
+  </Card>
+</Columns>
+
+## Collaboration Timelines and Costs
+
+Vidiemme structures projects into clear phases to ensure transparency. You start with discovery, move to design and development, then testing and deployment.
+
+<Steps>
+  <Step title="Discovery" icon="search">
+    Define requirements and scope. Typically 2-4 weeks.
+  </Step>
+  <Step title="Design & Prototyping" icon="layout">
+    Create wireframes and prototypes. 4-6 weeks.
+  </Step>
+  <Step title="Development" icon="code">
+    Build and iterate core features. 8-12 weeks.
+  </Step>
+  <Step title="Testing & Launch" icon="check-circle">
+    QA, security checks, and go-live. 2-4 weeks.
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Costs vary by scope. Fixed-price for defined projects starts at $50,000. Time-and-materials for agile engagements bill hourly from $150/hour. Contact sales for a tailored quote.
+</Callout>
+
+| Phase | Duration | Key Deliverables |
+|-------|----------|------------------|
+| Discovery | 2-4 weeks | Requirements document |
+| Design | 4-6 weeks | Interactive prototypes |
+| Development | 8-12 weeks | Functional application |
+| Launch | 2-4 weeks | Production deployment |
+
+## Technology Stack and Scalability
+
+Vidiemme selects modern, scalable stacks tailored to your industry needs, such as Retail or Finance. Our solutions handle high traffic with cloud-native architecture.
+
+<Tabs>
+  <Tab title="Web Apps" icon="globe">
+    React for frontend, Node.js/Express for backend, deployed on AWS or Vercel.
+  </Tab>
+  <Tab title="Mobile Apps" icon="smartphone">
+    React Native for cross-platform, with Firebase for real-time features.
+  </Tab>
+  <Tab title="AI & Conversational" icon="bot">
+    Python with TensorFlow for AI models, integrated via Dialogflow or Rasa.
+  </Tab>
+</Tabs>
+
+Demonstrate scalability with this Node.js example using clustering for multi-core utilization:
+
+<CodeGroup tabs="Node.js,Docker">
+  ```javascript
+  const cluster = require('cluster');
+  const numCPUs = require('os').cpus().length;
+
+  if (cluster.isMaster) {
+    console.log(`Master ${process.pid} is running`);
+    for (let i = 0; i < numCPUs; i++) {
+      cluster.fork();
+    }
+  } else {
+    // Workers serve requests
+    require('http').createServer((req, res) => {
+      res.writeHead(200);
+      res.end('Scalable Vidiemme app!');
+    }).listen(8000);
+  }
+  ```
+  ```dockerfile
+  FROM node:18-alpine
+  WORKDIR /app
+  COPY package*.json ./
+  RUN npm install
+  COPY . .
+  EXPOSE 8000
+  CMD ["node", "server.js"]
+  ```
+</CodeGroup>
+
+## Success Stories and Client Support
+
+<ExpandableGroup>
+  <Expandable title="What industries do you serve?" default-open="true">
+    Vidiemme supports Retail, Fashion, Pharma, Finance, and more. For example, a Pharma client used our AI solution to streamline compliance reporting, reducing processing time by 40%.
+  </Expandable>
+  <Expandable title="How do you measure success?">
+    Success metrics include ROI, user adoption, and uptime `{>99.9%}`. Case studies show 30-50% efficiency gains for clients.
+  </Expandable>
+  <Expandable title="What post-launch support is available?">
+    Standard support includes 3 months free, with options for 24/7 enterprise SLA. You access a dedicated portal for tickets and updates.
+  </Expandable>
+  <Expandable title="Can you share client testimonials?">
+    "Vidiemme transformed our e-commerce with scalable AI chat," - Retail Director. Full stories available upon NDA.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Schedule a free consultation to discuss your project. Visit our contact page or email `hello@vidiemme.com`.
+</Callout>

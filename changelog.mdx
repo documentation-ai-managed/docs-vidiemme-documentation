@@ -1,0 +1,153 @@
+---
+title: Changelog
+description: Updates and enhancements to Vidiemme's offerings and documentation.
+---
+
+## Overview
+
+Vidiemme releases updates regularly to enhance your experience with our AI, conversational, web, and mobile solutions. You receive new features, performance improvements, and bug fixes across industries like Retail, Fashion, Pharma, and Finance. Review this changelog to track changes, migrate integrations, and leverage the latest capabilities.
+
+Stay informed by subscribing to notifications or checking our GitHub repository.
+
+<Columns cols={3}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/vidiemme/releases" target="_blank">
+    View all tagged releases and download assets.
+  </Card>
+  <Card title="API Reference" icon="book-open" href="/docs/api">
+    Updated endpoints and SDK examples.
+  </Card>
+  <Card title="Support Portal" icon="help-circle" href="https://support.vidiemme.com">
+    Submit feedback or report issues.
+  </Card>
+</Columns>
+
+## Recent Updates
+
+<Update label="2024-11-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Launched Conversational AI SDK with real-time voice processing for Retail chatbots.
+- Added Pharma compliance module for secure data handling in drug discovery apps.
+
+## Improvements
+
+- Enhanced mobile app performance by `>30%` on low-end devices.
+- Optimized documentation search with AI-powered relevance ranking.
+
+## Bug Fixes
+
+- Fixed authentication token refresh in web dashboards.
+- Resolved edge cases in Fashion recommendation engine.
+
+</Update>
+
+<Update label="2024-10-20" description="v2.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Introduced multi-language support for conversational interfaces (10+ languages).
+- New Finance analytics dashboard with real-time transaction visualization.
+
+## Breaking Changes
+
+- Updated API authentication to use `{API_KEY}` headers instead of query params. Migrate your calls.
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Old
+fetch('/api/transactions?key=YOUR_API_KEY')
+
+// New
+fetch('/api/transactions', {
+  headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` }
+})
+```
+```python
+# Old
+requests.get('/api/transactions', params={'key': 'YOUR_API_KEY'})
+
+# New
+requests.get('/api/transactions', headers={'Authorization': 'Bearer YOUR_API_KEY'})
+```
+</CodeGroup>
+
+## Improvements
+
+- Reduced latency in AI model inference by `50ms`.
+
+</Update>
+
+<Update label="2024-09-10" description="v1.5.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Streamlined deployment workflows for web solutions.
+- Better integration with startup ecosystems via partner APIs.
+
+## Bug Fixes
+
+- Patched security vulnerabilities in mobile SDK (CVEs fixed).
+- Corrected data export issues in Pharma trial management tools.
+
+</Update>
+
+## How to Check Your Version
+
+Follow these steps to verify your installed version and apply updates.
+
+<Steps>
+  <Step title="Verify Current Version" icon="check-circle">
+    Run the version check command in your project directory.
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm list vidiemme-sdk
+```
+```bash
+yarn list vidiemme-sdk
+```
+    </CodeGroup>
+  </Step>
+  <Step title="Update SDK" icon="download">
+    Install the latest version.
+
+    ```bash
+    npm install vidiemme-sdk@latest
+    ```
+  </Step>
+  <Step title="Test Changes" icon="play-circle">
+    Run your integration tests and review breaking change notes above.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable auto-updates in your config file to receive notifications for critical patches.
+</Callout>
+
+## Platform-Specific Changes
+
+Review updates tailored to your tech stack.
+
+<Tabs>
+  <Tab title="Web & Mobile" icon="smartphone">
+    Enhanced PWA support and offline capabilities for Fashion e-commerce apps.
+  </Tab>
+  <Tab title="AI & Conversational" icon="zap">
+    New voice-to-text models trained on industry-specific datasets (Retail, Finance).
+  </Tab>
+  <Tab title="Enterprise" icon="shield">
+    Pharma and Finance modules now include GDPR/HIPAA audit logs.
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Migration Guide" default-open="false">
+    For v2.0.0 breaking changes, update all `Authorization` headers. Test in staging first.
+
+    | Old Param | New Header     |
+    |-----------|----------------|
+    | `key`     | `Authorization`|
+    | `token`   | `X-API-Token` |
+  </Expandable>
+</ExpandableGroup>
